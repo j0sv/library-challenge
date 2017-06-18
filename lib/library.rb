@@ -8,9 +8,12 @@ class Library
     @books = get_books
   end
 
-  def list_books(available=nil)
+  def list_books(status='all')
     puts "List of all books at #{name}: "
-    @books.each do |book|
+
+    tmp_books = filter_books(status)
+
+    tmp_books.each do |book|
       puts "-----------------------------------------------"
       puts "Title: #{book[:item][:title]}"
       puts "Author: #{book[:item][:author]}"
@@ -21,6 +24,18 @@ class Library
       end
     end
     puts "-----------------------------------------------"
+  end
+
+  def filter_books(status)
+    case status
+    when "available"
+      tmp_books = @books.select { |obj| obj[:available] == true}
+    when "unavailable"
+      tmp_books = @books.select { |obj| obj[:available] == false}
+    else
+      tmp_books=@books
+    end
+    tmp_books
   end
 
   def get_books()
