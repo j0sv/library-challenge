@@ -15,7 +15,7 @@ class Library
 
     tmp_books.each do |book|
       puts "-----------------------------------------------"
-      puts "Title: #{book[:item][:title]}"
+      puts "#{book[:item][:bookid]} Title: #{book[:item][:title]}"
       puts "Author: #{book[:item][:author]}"
       if book[:available] == false
         puts "Available: #{book[:available]}, return date: #{book[:return_date]}"
@@ -40,6 +40,13 @@ class Library
 
   def get_books()
     YAML.load_file('./lib/books_data.yml')
+  end
+
+  def check_out_book(bookid)
+    tmp_book = @books.detect { |obj| obj[:item][:bookid]==bookid }
+    puts tmp_book
+    tmp_book[:available] = false
+    puts tmp_book
   end
 
 end

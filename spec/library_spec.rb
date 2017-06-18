@@ -18,10 +18,17 @@ describe Library do
     expect(subject.get_books).to be_an_instance_of Array
   end
 
+  it 'list all books' do
+    subject.list_books
+  end
 
+  it 'a book can be checked out' do
+    #subject.books[1][:available] = true
+    tmp_book = subject.books.detect { |obj| obj[:item][:bookid]==1 }
+    subject.check_out_book(1)
+    expect(tmp_book[:available]).to eq false
+  end
 
-  xit 'can get a subset of all boks than have the critera available'
-  xit 'can search and get a list of all books meeting search critera'
   xit 'user can check out a book'
   xit 'user can list all books that user has check ut'
   xit 'librarian can add a new book'
