@@ -5,24 +5,26 @@ class Library
 
   def initialize(args={})
     @name = 'The Lib of CA'
+    @books = get_books
   end
 
-  def list_books
+  def list_books(available=nil)
     puts "List of all books at #{name}: "
-    get_books.each do |book|
-      puts "------------------------------"
+    @books.each do |book|
+      puts "-----------------------------------------------"
       puts "Title: #{book[:item][:title]}"
       puts "Author: #{book[:item][:author]}"
-      puts "Available: #{book[:available]}"
-      puts "Return date: #{book[:return_date]}"
+      if book[:available] == false
+        puts "Available: #{book[:available]}, return date: #{book[:return_date]}"
+      else
+        puts "Available: #{book[:available]}"
+      end
     end
-    puts "------------------------------"
+    puts "-----------------------------------------------"
   end
 
-
-  private
   def get_books()
-    @books = YAML.load_file('./lib/data.yml')
+    YAML.load_file('./lib/books_data.yml')
   end
 
 end
