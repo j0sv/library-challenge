@@ -2,11 +2,15 @@ require 'yaml'
 require './lib/user.rb'
 
 class Library
-  attr_accessor :books, :name, :currentPerson
+  attr_accessor :books, :name, :currentUser
 
   def initialize(args={})
     @name = 'The Lib of CA'
     @books = get_books
+  end
+
+  def logon_user
+    @currentUser=User.new
   end
 
   def list_books(status='all')
@@ -44,8 +48,9 @@ class Library
   end
 
   def check_out_book(bookid)
-    tmp_book = @books.detect { |obj| obj[:item][:bookid]==bookid }
+    tmp_book = @books.detect { |obj| obj[:item][:bookid]==bookid.to_i }
     tmp_book[:available] = false
+    @currentUser.add_book(tmp_book[:item][:bookid])
   end
 
 end

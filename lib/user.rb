@@ -7,17 +7,22 @@ class User
   end
 
   #Add a book to the list of borrobved books
-  def add_book (book)
-    tmp_books = YAML.load_file('./lib/books_user_data.yml')
-    tmp_books.push({:bookid=>book[:item][:bookid], :userid=>@userid, :returned_date=>nil})
-    File.open('./lib/books_user_data.yml', 'w') { |f| f.write collection.to_yaml }
+  def add_book (bookid)
+    @books.push({:bookid=>bookid, :userid=>@userid, :returned=>false})
+    File.open('./lib/books_user_data.yml', 'w') { |f| f.write @books.to_yaml }
   end
 
-  #Get all books that the user has borrowed
+  #Get all books that the users have borrowed
   def get_books()
-    tmp_books = YAML.load_file('./lib/books_user_data.yml')
-    puts tmp_books[0]
-    tmp_books.select { |obj| obj[:available] == @userid}
+    YAML.load_file('./lib/books_user_data.yml')
+  end
+
+  def list_books
+    @books.each_char { |book| puts book }
+  end
+
+  def list_borrowed_books
+    puts @books.select { |obj| obj[:userid] == @userid}
   end
 
 end
