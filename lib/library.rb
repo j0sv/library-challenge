@@ -1,7 +1,8 @@
 require 'yaml'
+require './lib/user.rb'
 
 class Library
-  attr_accessor :books, :name
+  attr_accessor :books, :name, :currentPerson
 
   def initialize(args={})
     @name = 'The Lib of CA'
@@ -44,9 +45,7 @@ class Library
 
   def check_out_book(bookid)
     tmp_book = @books.detect { |obj| obj[:item][:bookid]==bookid }
-    puts tmp_book
     tmp_book[:available] = false
-    puts tmp_book
   end
 
 end
