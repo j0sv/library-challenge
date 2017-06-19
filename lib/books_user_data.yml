@@ -1,76 +1,25 @@
 ---
-- :bookid: 3
+- :bookid: 2
   :userid: bobj
   :returned: false
+  :returned_date:
 - :bookid: 1
   :userid: josv
   :returned: false
-- :bookid: 1
-  :userid: josv
-  :returned: false
-- :bookid: 1
-  :userid: josv
-  :returned: false
-- :bookid: 1
-  :userid: josv
-  :returned: false
-- :bookid: 1
-  :userid: josv
-  :returned: false
-- :bookid: 1
-  :userid: josv
-  :returned: false
-- :bookid: 1
-  :userid: josv
-  :returned: false
+  :returned_date:
 - :bookid: 4
   :userid: josv
   :returned: false
-- :bookid: 1
+  :returned_date:
+- :bookid: 6
+  :userid: josv
+  :returned: true
+  :returned_date:
+- :bookid: 9
   :userid: josv
   :returned: false
-- :bookid: 4
+  :returned_date:
+- :bookid: 2
   :userid: josv
-  :returned: false
-- :bookid: 4
-  :userid: josv
-  :returned: false
-- :bookid: 4
-  :userid: josv
-  :returned: false
-- :bookid: 4
-  :userid: josv
-  :returned: false
-- :bookid: 4
-  :userid: josv
-  :returned: false
-- :bookid: 4
-  :userid: josv
-  :returned: false
-- :bookid: 4
-  :userid: josv
-  :returned: false
-- :bookid: 4
-  :userid: josv
-  :returned: false
-- :bookid: 4
-  :userid: josv
-  :returned: false
-- :bookid: 4
-  :userid: josv
-  :returned: false
-- :bookid: 4
-  :userid: josv
-  :returned: false
-- :bookid: 4
-  :userid: josv
-  :returned: false
-- :bookid: 4
-  :userid: josv
-  :returned: false
-- :bookid: 4
-  :userid: josv
-  :returned: false
-- :bookid: 4
-  :userid: josv
-  :returned: false
+  :returned: true
+  :returned_date: 2017-06-19 04:57:32.016056000 +02:00

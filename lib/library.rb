@@ -50,7 +50,9 @@ class Library
   def check_out_book(bookid)
     tmp_book = @books.detect { |obj| obj[:item][:bookid]==bookid.to_i }
     tmp_book[:available] = false
+    tmp_book[:return_date] = Date.today+30
     @currentUser.add_book(tmp_book[:item][:bookid])
+      File.open('./lib/books_data.yml', 'w') { |f| f.write @books.to_yaml }
   end
 
 end

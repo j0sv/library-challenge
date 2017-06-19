@@ -1,9 +1,10 @@
+---
 - :item:
     :bookid: 1
     :title: Alfons och soldatpappan
     :author: Gunilla Bergström
-  :available: true
-  :return_date:
+  :available: false
+  :return_date: 2017-07-19
 - :item:
     :bookid: 2
     :title: Skratta lagom! Sa pappa Åberg
@@ -15,16 +16,40 @@
     :title: Osynligt med Alfons
     :author: Gunilla Bergström
   :available: true
-  :return_date:
+  :return_date: 
 - :item:
     :bookid: 4
     :title: Pippi Långstrump
     :author: Astrid Lindgren
-  :available: true
-  :return_date:
+  :available: false
+  :return_date: 2017-07-13
 - :item:
     :bookid: 5
     :title: Pippi Långstrump går ombord
     :author: Astrid Lindgren
   :available: true
-  :return_date:
+  :return_date: 
+- :item:
+    :bookid: 6
+    :title: Pippi Långstrump och rasisterna
+    :author: Astrid Lindgren
+  :available: true
+  :return_date: 
+- :item:
+    :bookid: 7
+    :title: Pippi Långstrump går på planka
+    :author: Astrid Lindgren
+  :available: true
+  :return_date: 
+- :item:
+    :bookid: 8
+    :title: Pippi Långstrump i Danmark
+    :author: Astrid Lindgren
+  :available: true
+  :return_date: 
+- :item:
+    :bookid: 9
+    :title: Pippi Långstrump lär sig Ruby
+    :author: Astrid Lindgren
+  :available: false
+  :return_date: 2017-06-30
