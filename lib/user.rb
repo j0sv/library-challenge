@@ -17,7 +17,6 @@ class User
       File.open('./lib/books_user_data.yml', 'w') { |f| f.write @books.to_yaml }
     else
       puts @books.push({ :bookid=>bookid, :userid=>@userid, :returned=>false , :returned_date=>nil })
-      puts "nu är vi inne i else"
       File.open('./lib/books_user_data.yml', 'w') { |f| f.write @books.to_yaml }
     end
   end

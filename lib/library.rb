@@ -40,7 +40,6 @@ class Library
     else
       tmp_books=@books
     end
-    tmp_books
   end
 
   def get_books()
@@ -49,6 +48,7 @@ class Library
 
   def check_out_book(bookid)
     tmp_book = @books.detect { |obj| obj[:item][:bookid]==bookid.to_i }
+    #tmp_book = @books.find([:item][:bookid] bookid.to_i)
     tmp_book[:available] = false
     tmp_book[:return_date] = Date.today+30
     @currentUser.add_book(tmp_book[:item][:bookid])
