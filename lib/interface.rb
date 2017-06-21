@@ -22,18 +22,27 @@ class Interface
       print_librarian_menu()
     end
 
-    puts '[L]. Logon Application'
+    if @lib.currentUser == nil
+      puts '[L]. Logon Application'
+    else
+      puts '[L]. Logout Application'
+    end
     puts '[Q]. Exit Application'
   end
 
   def print_user_menu()
-    puts "user"
+    puts ''
+    puts '---== User Menu ==---'
+    puts '[U1]. List Youre Borrowed Books'
+    puts ''
   end
 
   def print_librarian_menu()
+    puts '' if @lib.currentUser == nil
     puts '---== Librarian Menu ==---'
     puts '[L1]. List Unavailable Books'
     puts '[L2]. List Late Return Books'
+    puts ''
   end
 
   def application_loop
@@ -52,8 +61,6 @@ class Interface
 
   def application_action(selection)
 
-    puts 'inside application_action'
-
     case selection
     when '1', 'list'
       clear
@@ -63,12 +70,21 @@ class Interface
       clear
       @lib.list_books("available")
       continue
-    when 'L'
-      puts 'val L'
+    when 'l1'
+      clear
+      puts @lib.list_books("unavailable")
+      continue
+    when 'l'
+      clear
+      puts @lib.logon_user
+      puts "You have now logged on as the user #{@lib.currentUser.userid}"
+      continue
     when 'q'
       @exit_app=true
     else
-      puts "Incorrect selection!"
+      clear
+      puts selection + " is a invalid selection!"
+      continue
     end
   end
 

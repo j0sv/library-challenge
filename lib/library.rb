@@ -14,7 +14,7 @@ class Library
   end
 
   def list_books(status='all')
-    puts "List of all books at #{name}: "
+    puts "List of #{status} books at #{name}: "
 
     tmp_books = filter_books(status)
 
