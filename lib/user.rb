@@ -49,6 +49,8 @@ class User
     tmp_books.each do |book|
       print_borrowed_books(book[:bookid])
     end
+    #Prints Hash if not nil is returned 
+    return nil
   end
 
   def print_borrowed_books(bookid)

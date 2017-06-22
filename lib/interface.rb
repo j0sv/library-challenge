@@ -49,7 +49,7 @@ class Interface
     while @exit_app==false
 
       print_main_menu
-
+      print "Provide menu option: "
       menu_input = gets.chomp
       menu_input=menu_input.to_s
       menu_input=menu_input.downcase
@@ -74,13 +74,21 @@ class Interface
       clear
       puts @lib.list_books("unavailable")
       continue
+    when 'u1'
+      if @lib.currentUser != nil
+        clear
+        puts @lib.currentUser.userid
+        puts @lib.currentUser.list_borrowed_books
+        continue
+      end
     when 'l'
       clear
       puts @lib.logon_user
-      puts "You have now logged on as the user #{@lib.currentUser.userid}"
+      puts "You have now logged on as the user #{@lib.currentUser.userid}" if @lib.currentUser != nil
       continue
     when 'q'
       @exit_app=true
+      puts "Thank for the visit and welcome back to #{@lib.name}!"
     else
       clear
       puts selection + " is a invalid selection!"

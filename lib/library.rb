@@ -10,7 +10,12 @@ class Library
   end
 
   def logon_user
-    @currentUser=User.new
+    if @currentUser == nil
+      @currentUser=User.new
+    else
+      puts 'loggar ut'
+      @currentUser=nil
+    end
   end
 
   def list_books(status='all')
